@@ -1,0 +1,34 @@
+######################################################################
+# config variables 
+######################################################################
+
+AzureSubscriptionID = ""
+AzureClientID       = ""
+AzureClientSecret   = ""
+AzureTenantID       = ""
+AzureADClientID     = ""
+AzureADClientSecret = ""
+
+AKSAdminGroupName   = ""
+AKSPrivateDNSZoneId = ""
+LawDefenderId       = ""
+LawMonitorId        = ""
+StaMonitorId        = ""
+SharedKv            = ""
+
+
+
+AksConfig = {
+  "retina" = {
+    AKSNetworkPlugin         = "azure"
+    AKSNetPolProvider        = "cilium"
+    AksVnetName              = "vnet-sbx-spokeretina1"
+    AksVnetRgName            = "rsg-aksretina"
+    AksSubnet                = "sub1-vnet-sbx-spokeretina1"
+    PodCidr                  = "100.72.0.0/16"
+    ServiceCidr              = "100.73.0.0/16" 
+    NetworkPluginMode        = "overlay"
+    EbpfDataplane            = "cilium"
+  }
+}
+
