@@ -1,0 +1,73 @@
+######################################################################
+# config variables 
+######################################################################
+
+AzureSubscriptionID = ""
+AzureClientID       = ""
+AzureClientSecret   = ""
+AzureTenantID       = ""
+
+AzureSubscriptionMonitorID  = ""
+
+LawMonitorId  = ""
+StaMonitorId  = ""
+
+
+VnetConfig = {
+  "aksretina" = {
+    VNetAddressSpace = "172.21.14.0/24"
+    AppName          = "spokeretina"
+    VnetPeered       = false 
+  }
+}
+
+SubnetsConfig = [
+  {
+    Name             = "Subnet1"
+    AllowCustomName  = false
+    EnableNsg        = true
+    EnableNsgDiagSet = true
+    EnableFlowlogs   = true
+    Nsg = {
+      Name  = "Nsg-Subnet1"
+      Rules = {}
+    }
+  },
+  {
+    Name             = "Subnet2"
+    AllowCustomName  = false
+    EnableNsg        = true
+    EnableNsgDiagSet = true
+    EnableFlowlogs   = true
+    Nsg = {
+      Name  = "Nsg-Subnet2"
+      Rules = {}
+    }
+  },
+  {
+    Name             = "Subnet3"
+    AllowCustomName  = false
+    EnableNsg        = true
+    EnableNsgDiagSet = true
+    EnableFlowlogs   = true
+    Nsg = {
+      Name  = "Nsg-Subnet3"
+      Rules = {}
+    }
+  },
+  {
+    Name             = "Subnet4"
+    AllowCustomName  = true
+    EnableNsg        = false
+    Name             = "AzureBastionSubnet"
+    EnableNsgDiagSet = true
+    EnableFlowlogs   = true
+    Nsg = {
+      Name  = "Nsg-AzureBastionSubnet"
+      Rules = {}
+    }
+  }
+
+]
+
+VirtualHubId = ""
