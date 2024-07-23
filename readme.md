@@ -1,4 +1,4 @@
-# Lab AKS Retina
+# Lab AKS Cilium Auth
 
 This repo contains samples IaC configurations to test Cilium mutual authentication on AKS.
 It's organized in 3 layers in the `terraformconfig` folder
