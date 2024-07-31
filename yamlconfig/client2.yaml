@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: client2
+  name: client2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: client2
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: client2
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}

@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: demodeployment
+  name: demodeployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: demodeployment
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: demodeployment
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: demodeployment
+  name: demodeployment
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: demodeployment
+status:
+  loadBalancer: {}

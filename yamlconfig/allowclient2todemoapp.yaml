@@ -1,0 +1,20 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allowclient2todemoappauth
+  namespace: default
+spec:
+  description: Allow Client2 to demo app
+  endpointSelector:
+    matchLabels:
+      app: demodeployment
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        app: client2
+    authentication:
+      mode: required
+    toPorts:
+    - ports:
+      - port: "80"
+        protocol: TCP

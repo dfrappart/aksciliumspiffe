@@ -1,0 +1,12 @@
+apiVersion: "cilium.io/v2"
+kind: CiliumNetworkPolicy
+metadata:
+  name: "demo1-default-deny"
+  namespace: default
+spec:
+  description: "Default-deny ingress policy for demo app"
+  endpointSelector:
+    matchLabels:
+      app: demodeployment
+  ingress:
+  - {}
