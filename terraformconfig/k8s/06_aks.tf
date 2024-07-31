@@ -86,6 +86,7 @@ module "AKS" {
   IsOMSAgentEnabled = false
 
   EnableHostEncryption     = each.value.EnableHostEncryption
+  AKSDiskEncryptionId      = azurerm_disk_encryption_set.AKSEncryptionSet[each.key].id
   IsAKSPrivate             = each.value.IsAKSPrivate
   PrivateClusterPublicFqdn = each.value.PrivateClusterPublicFqdn
   AzureRBACEnabled         = each.value.AzureRBACEnabled
@@ -104,6 +105,8 @@ module "AKS" {
   AKSNetworkDNS        = each.value.ServiceCidr != null ? cidrhost(each.value.ServiceCidr, 10) : null
   AKSNetworkPluginMode = each.value.NetworkPluginMode
   AKSEbpfDataplane     = each.value.EbpfDataplane
+
+
 
   depends_on = [
     azurerm_role_assignment.AKSDNSContributor,

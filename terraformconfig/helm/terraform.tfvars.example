@@ -1,0 +1,12 @@
+######################################################################
+# config variables 
+######################################################################
+
+
+AzureSubscriptionID = ""
+AzureClientID       = ""
+AzureClientSecret   = ""
+AzureTenantID       = ""
+
+
+AksClusterId        = ""
